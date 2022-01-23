@@ -1,0 +1,85 @@
+﻿@model IEnumerable<DDAC_MVC_.Models.Music>
+@{
+    ViewData["Title"] = "Music List";
+}
+
+<link rel="stylesheet" href="~/css/modal.css" />
+<link rel="stylesheet" href="~/css/table.css" />
+<div id="addmodal" class="modal">
+    <div class="modal-content">
+        <form class="modal-form">
+            <h2 class="modal-title">Add New Music</h2>
+            <input type="file" /><br />
+            <label for="title">Song Title:</label><br />
+            <input id="title" type="text" placeholder="Enter song title" /><br />
+            <label for="artist">Artist:</label><br />
+            <input id="artist" type="text" placeholder="Enter artist name" /><br />
+            <label for="genre">Genre:</label><br />
+            <input id="genre" type="text" placeholder="Enter genre here" /><br />
+            <label for="desc">Description:</label><br />
+            <textarea id="desc" type="text" placeholder="Enter description here"></textarea><br />
+
+
+
+        </form>
+        <div id="btncollection">
+            <button id="submitbtn" class="btn-primary"><i class="bi bi-save-fill"></i>Save</button>
+            <button id="cancelbtn" class="btn-danger">Cancel</button>
+        </div>
+    </div>
+</div>
+<div id="content">
+    <h1>@ViewData["Title"]</h1>
+    <button class="addbtn btn-primary">Add Music</button>
+    <div>
+        <table class="table table-hover table-light table-borderless">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Song Title</th>
+                    <th>Artist</th>
+                    <th>Genre</th>
+                    <th>Description</th>
+                    <th colspan="4">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count() > 0)
+                {
+                    @foreach (var item in Model)
+                    {
+                <tr>
+                    <td>@item.musicid</td>
+                    <td>@item.title</td>
+                    <td>@item.artist</td>
+                    <td>@item.genre</td>
+                    <td>@item.description</td>
+                    <td><button id="@item.musicid" class="listen btn-primary" ><i class="bi bi-megaphone-fill"></i>Listen</button></td>
+                    <td><button id="@item.musicid" class="edit btn-warning" ><i class="bi bi-pencil-square"></i>Edit</button></td>
+                    <td><button id="@item.musicid" class="remove btn-danger" ><i class="bi bi-x-lg"></i>Remove</button></td>
+                    <td><button id="@item.musicid" class="remove btn-info" ><i class="bi bi-heart"></i>Favourite</button></td>
+
+                </tr>
+                    }
+
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(".addbtn").on("click", function () {
+        $("#addmodal").fadeIn(200);
+
+    })
+    $("#cancelbtn").on("click", function () {
+        $("#addmodal").fadeOut(100);
+
+    })
+
+
+</script>

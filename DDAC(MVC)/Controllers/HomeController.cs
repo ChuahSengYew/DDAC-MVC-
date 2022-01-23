@@ -30,7 +30,7 @@ namespace DDAC_MVC_.Controllers
 
         public IActionResult MusicList()
         {
-            return View();
+            return RedirectToAction("Index", "MusicList");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

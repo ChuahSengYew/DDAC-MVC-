@@ -1,15 +1,17 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@100&display=swap');
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  font-size:1.5em;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    font-size: 1.5em;
+    color: #0366d6;
 }
 
 .btn-primary {
@@ -61,6 +63,16 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
+    background: #505050;
+    font-family: 'Comfortaa', cursive;
+}
+
+h1{
+    color:white;
+    font-size:3em;
+    margin-top:1%;
+    margin-bottom:1%;
+    
 }
 .footer {
     position: absolute;
@@ -69,3 +81,4 @@ body {
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
 }
+
