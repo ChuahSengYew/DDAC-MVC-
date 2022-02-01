@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.SqlClient;
 
 namespace DDACAPI
 {
@@ -24,16 +25,22 @@ namespace DDACAPI
             services.AddDistributedMemoryCache();
             services.AddSession();
             services.AddControllers();
+            services.AddCors(options =>
+                options.AddDefaultPolicy(
+                    builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod())
+            );
+
             //Local MS SQL
             var connection = Configuration.GetConnectionString("MusicConnectionLocal");
 
 
             //RDS
-            /*
-            var builder = new SqlConnectionStringBuilder(Configuration.GetConnectionString("RDSConn2"));
-            builder.Password = Configuration["DbPassword"];
-            builder.UserID = Configuration["DbUser"];
-            var connection = builder.ConnectionString;*/
+
+            // var builder = new SqlConnectionStringBuilder(Configuration.GetConnectionString("RDSConn2"));
+            // builder.Password = Configuration["DbPassword"];
+            // builder.UserID = Configuration["DbUser"];
+            // var connection = builder.ConnectionString;
+            services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
             services.AddDbContext<MusicContext>(options => options.UseSqlServer(connection));
         }
 
@@ -48,6 +55,8 @@ namespace DDACAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 

@@ -1,16 +1,21 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;800&display=swap');
+
+.navbar, .footer {
+    background-color: #000000 !important;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-  font-size:1.5em;
+  font-size:1rem;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-    font-size: 1.5em;
+    font-size: 1rem;
     color: #0366d6;
 }
 
@@ -29,11 +34,11 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+  font-size: 1rem;
 }
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -63,17 +68,78 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background: #505050;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a, a:hover {
+    color: inherit;
+}
+
+a:link {
+    text-decoration: none;
 }
 
 h1{
-    color:white;
-    font-size:3em;
-    margin-top:1%;
-    margin-bottom:1%;
-    
+    font-weight: 800;
 }
+
+h3 {
+    font-weight: 900;
+}
+
+h5 {
+    font-weight: 800;
+}
+
+.card-title {
+    font-weight: 800;
+}
+
+.card {
+    transition: all .5s ease;
+}
+
+.card a:hover {
+    border-radius: 25px; 
+    background: #f1f1f1;
+    transition: all .2s ease;
+}
+
+.card a {
+    transition: all .5s ease;
+}
+
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.news-card {
+    background: url('https://music-now-assets.s3.amazonaws.com/bg-1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    color: #fff;
+    background-color: #111111;
+    transition: all .5s ease;
+}
+
+.news-card:hover {
+    background-color: #1f1f1f;
+    transition: all .5s ease;
+}
+
+.songs-card {
+    background-color: #2B44AE;
+    color: #E3CAD7;
+}
+
+.song-card-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 3rem;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -82,3 +148,44 @@ h1{
     line-height: 60px; /* Vertically center the text there */
 }
 
+.form-container {
+    margin: 2rem 12rem 1rem 12rem;
+    border: 1px #e5e5e5 solid;
+    padding: 1rem;
+}
+
+button {
+    background-color: indigo;
+}
+
+label {
+    font-weight: 600;
+}
+
+.border-rad, .carousel-inner {
+    border-radius: 25px !important;
+}
+
+.border-rad-top {
+    border-radius: 25px 25px 0 0 !important;
+}
+
+@media (max-width: 991px) {
+    .song-card-title {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .form-container {
+        margin: 2rem 0 1rem 0;
+    }
+}
+
+@media (max-width: 1700px) {
+    .song-card-title {
+        font-size: 2.4rem;
+        line-height: 2.4rem;
+    }
+}

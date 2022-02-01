@@ -1,11 +1,8 @@
 ﻿using DDACAPI.Data;
 using DDACAPI.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DDACAPI.Controllers
@@ -21,10 +18,23 @@ namespace DDACAPI.Controllers
             _context = context;
         }
 
-
-            public async Task<ActionResult<IEnumerable<Music>>> GetMusics()
+        // GET: api/user
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Music>>> GetMusics()
         {
             return await _context.Music.ToListAsync();
+        }
+
+        // POST: api/Users
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        // more details see https://aka.ms/RazorPagesCRUD.
+        [HttpPost]
+        public async Task<ActionResult<Music>> PostAuthor(Music music)
+        {
+            _context.Music.Add(music);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetMusics", new { id = music.musicid }, music);
         }
 
     }
