@@ -1,6 +1,4 @@
-﻿@{var status = "";}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -48,9 +46,8 @@
         async function getUser() {
             let id = 1;
             let userApi = api + '/user/' + id;
-            console.log(userApi);
             try {
-                let response = await fetch(userApi);
+                let response = await fetch(userApi, { cache: "force-cache" });
                 return await response.json();
             } catch (error) {
                 console.log(error);
@@ -62,16 +59,39 @@
             if (user.type == 0) {
                 container.innerHTML = `
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="nav-link text-light" href="">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                <a class="nav-link text-light" href="privacy">Privacy</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="MusicList">Music List</a>
+                                <a class="nav-link text-light" href="profile">${user.fullName}</a>
+                            </li>
+                            `;
+            }
+            else if (user.type == 1) {
+                container.innerHTML = `
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="MusicList">${user.fullName}</a>
+                                <a class="nav-link text-light" href="privacy">Privacy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="profile">${user.fullName}</a>
+                            </li>
+                            `;
+            }
+            else if (user.type == 2) {
+                container.innerHTML = `
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="privacy">Privacy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="profile">${user.fullName}</a>
                             </li>
                             `;
             }

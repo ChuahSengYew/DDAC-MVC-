@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace DDAC_MVC_.Controllers
 {
-    public class SongsController : Controller
+    public class SignUpController : Controller
     {
-        private readonly ILogger<SongsController> _logger;
+        private readonly ILogger<SignUpController> _logger;
 
-        public SongsController(ILogger<SongsController> logger)
+        public SignUpController(ILogger<SignUpController> logger)
         {
             _logger = logger;
         }
@@ -30,7 +30,7 @@ namespace DDAC_MVC_.Controllers
 
         public IActionResult SignUp()
         {
-            return RedirectToAction("Index", "Songs");
+            return RedirectToAction("Index", "SignUp");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

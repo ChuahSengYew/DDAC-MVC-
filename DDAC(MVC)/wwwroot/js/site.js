@@ -1,1 +1,1 @@
-﻿let api = 'https://localhost:44382/api';
+﻿let api = 'https://2b9fmscy46.execute-api.us-east-1.amazonaws.com/Prod/api';

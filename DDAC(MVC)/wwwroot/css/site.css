@@ -79,7 +79,7 @@ a:link {
     text-decoration: none;
 }
 
-h1{
+h1, h4, h5{
     font-weight: 800;
 }
 
@@ -87,16 +87,28 @@ h3 {
     font-weight: 900;
 }
 
-h5 {
+.user-detail {
+    font-weight: 600;
+}
+
+.card-title, .music-title {
     font-weight: 800;
 }
 
-.card-title {
-    font-weight: 800;
+.music-genre {
+    font-weight: 600;
 }
 
 .card {
     transition: all .5s ease;
+}
+
+.songs .list-group-item, .songs-table .list-group-item, .user-info .list-group-item {
+    display: flex !important;
+}
+
+.bi-heart:hover {
+    color: #000;
 }
 
 .card a:hover {
@@ -130,6 +142,7 @@ h5 {
 }
 
 .songs-card {
+    cursor: pointer;
     background-color: #2B44AE;
     color: #E3CAD7;
 }
