@@ -49,7 +49,7 @@
             <p class="card-text users-info"></p>
         </div>
     </div>
-    <div class="card songs-card border-rad m-0 p-0 col-lg-4 col-md-4 col-sm-5">
+    <div class="card songs-card border-rad m-0 p-0 col-lg-4 col-md-4 col-sm-5" onclick="window.location='/songs';">
         <div class="card-body">
             <p class="song-card-title mb-0">Diversify your genres</p>
             <p class="card-text mt-3 genre-info"></p>
@@ -63,9 +63,8 @@
     async function getUser() {
         let id = 1;
         let userApi = api + '/user/' + id;
-        console.log(userApi);
         try {
-            let response = await fetch(userApi);
+            let response = await fetch(userApi, { cache: "force-cache" });
             return await response.json();
         } catch (error) {
             console.log(error);
@@ -79,7 +78,7 @@
     async function getNumberofUsers() {
         let usersApi = api + '/user';
         try {
-            let response = await fetch(usersApi);
+            let response = await fetch(usersApi, { cache: "force-cache" });
             return await response.json();
         } catch (error) {
             console.log(error);
@@ -94,13 +93,13 @@
     async function getGenres() {
         let musicsApi = api + '/music';
         try {
-            let musicData = await fetch(musicsApi);
+            let musicData = await fetch(musicsApi, { cache: "force-cache" });
             return await musicData.json();
         } catch (error) {
             console.log(error)
         }
     }
-    async function getG() {
+    async function filterGenre() {
         let musicData = await getGenres();
         genreArray = [];
         musicData.forEach(music => {
@@ -113,5 +112,5 @@
     }
     renderUser();
     renderNumberofUsers();
-    getG();
+    filterGenre();
 </script>

@@ -13,6 +13,6 @@
     "s3-prefix"     : "DDACAPI/",
     "template"      : "serverless.template",
     "template-parameters" : "",
-    "s3-bucket"           : "testing-tahmid",
-    "stack-name"          : "TahmidsStack"
+    "s3-bucket"           : "music-now-api",
+    "stack-name"          : "MusicNowAPIStack"
 }

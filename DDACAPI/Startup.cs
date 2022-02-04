@@ -31,16 +31,16 @@ namespace DDACAPI
             );
 
             //Local MS SQL
-            var connection = Configuration.GetConnectionString("MusicConnectionLocal");
+            // var connection = Configuration.GetConnectionString("MusicConnectionLocal");
 
 
             //RDS
 
-            // var builder = new SqlConnectionStringBuilder(Configuration.GetConnectionString("RDSConn2"));
-            // builder.Password = Configuration["DbPassword"];
-            // builder.UserID = Configuration["DbUser"];
-            // var connection = builder.ConnectionString;
-            services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
+            var builder = new SqlConnectionStringBuilder(Configuration.GetConnectionString("MusicConnection"));
+            builder.Password = Configuration["DbPassword"];
+            builder.UserID = Configuration["DbUser"];
+            var connection = builder.ConnectionString;
+            // services.AddDbContext<UserContext>(options => options.UseSqlServer(connection));
             services.AddDbContext<MusicContext>(options => options.UseSqlServer(connection));
         }
 
