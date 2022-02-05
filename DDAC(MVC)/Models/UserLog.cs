@@ -3,38 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DDACAPI.Models
+namespace DDAC_MVC_.Models
 {
-    public class Music
+    public class UserLog
     {
-        public Music()
-        {
 
-        }
-        public int musicid
+        public int logid
         {
             get;
             set;
         }
-        public string title
+
+        public int userid
         {
             get;
             set;
         }
-        public string artist
+
+        public string username
         {
             get;
             set;
         }
-        public string genre
+
+        public DateTime login
         {
             get;
             set;
         }
-        public string description
+
+        public DateTime logout
         {
             get;
             set;
         }
+
+
+
     }
 }

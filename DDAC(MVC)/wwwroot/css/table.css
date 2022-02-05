@@ -1,4 +1,26 @@
-﻿table{
-    width:100%;
+﻿
+#musictable .dataTables_wrapper .dataTables_length {
+    float:left;
     color:white;
 }
+
+    #musictable  .dataTables_wrapper .dataTables_length select {
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        padding: 5px;
+        background-color: white;
+        padding: 4px;
+    }
+
+#musictable .dataTables_wrapper .dataTables_filter {
+    float: right;
+    text-align: right;
+}
+
+    #musictable .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #aaa;
+        border-radius: 3px;
+        padding: 5px;
+        background-color: white;
+        margin-left: 3px;
+    }

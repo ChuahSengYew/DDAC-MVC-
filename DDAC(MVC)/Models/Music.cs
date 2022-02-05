@@ -36,5 +36,16 @@ namespace DDAC_MVC_.Models
             get;
             set;
         }
+        public string audio
+        {
+            get;
+            set;
+        }
+        public string image
+        {
+            get;
+            set;
+        }
+
     }
 }

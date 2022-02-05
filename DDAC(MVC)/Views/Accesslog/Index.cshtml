@@ -1,0 +1,56 @@
+﻿
+@model IEnumerable<DDAC_MVC_.Models.UserLog>
+
+@{
+    ViewData["Title"] = "User Access Log";
+}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" />
+<div id="content">
+    <h1>@ViewData["Title"]</h1>
+    <div>
+        <table id="logtable" class="table table-hover table-light table-borderless">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>User ID</th>
+                    <th>User</th>
+
+                    <th>Login </th>
+                    <th>Logout</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count() > 0)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.logid</td>
+                            <td>@item.userid</td>
+                            <td>@item.username</td>
+                            <td>@item.login</td>
+                            <td>@item.logout</td>
+
+
+                        </tr>
+                    }
+
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $.noConflict();
+        logtable = $("#logtable").DataTable({
+
+        });
+
+    });
+</script>

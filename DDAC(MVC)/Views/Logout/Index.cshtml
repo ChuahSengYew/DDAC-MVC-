@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Logging Out </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+    <div>
+
+        <h1 style="font-size:80px;text-align:center;margin-top:30%;">Logging Out</h1>
+
+
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                window.location.href = "/Home"
+            }, 4000);
+        });
+    </script>
+    </body>
+</html>

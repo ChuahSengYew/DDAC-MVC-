@@ -63,12 +63,11 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
-    background: #505050;
     font-family: 'Comfortaa', cursive;
 }
 
 h1{
-    color:white;
+    color:black;
     font-size:3em;
     margin-top:1%;
     margin-bottom:1%;
@@ -81,4 +80,9 @@ h1{
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
 }
+
+.container{
+    width:90%;
+}
+
 

@@ -18,7 +18,7 @@ namespace DDAC_MVC_
             //WebApiClient.BaseAddress = new Uri("https://99uzriezxl.execute-api.ap-southeast-1.amazonaws.com/Prod/api/");
 
             //US Lambda
-            //WebApiClient.BaseAddress = new Uri("https://13fndj6016.execute-api.us-east-1.amazonaws.com/Prod/api/");
+            //WebApiClient.BaseAddress = new Uri("https://2b9fmscy46.execute-api.us-east-1.amazonaws.com/Prod/api");
 
             //New Lambda JFC-Lambda - Singapore
             //WebApiClient.BaseAddress = new Uri("https://bjaknfg5nl.execute-api.ap-southeast-1.amazonaws.com/Prod/api/");

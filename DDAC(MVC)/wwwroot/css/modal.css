@@ -47,7 +47,7 @@
 
 .modal-content button {
     display: inline-block;
-    width: 15%;
+   
     padding: 1em;
     font-size: 1.5em;
     border-radius: 10px;
@@ -56,11 +56,14 @@
 .modal-content #btncollection{
     text-align:center;
 
+
 }
 
-.modal-content #btncollection {
-    text-align: center;
+.modal-content #btncollection button{
+    width:200px;
 }
+
+
 
 .addbtn{
     font-size:1.5em;
@@ -69,3 +72,4 @@
     margin-top:1%;
     margin-bottom:1%;
 }
+

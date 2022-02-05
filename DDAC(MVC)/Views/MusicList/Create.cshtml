@@ -1,0 +1,78 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model DDAC_MVC_.Models.Music
+
+@{ ViewData["Title"] = "Create"; }
+
+<h1>Create</h1>
+
+<h4>Music</h4>
+<hr />
+<a id="back" href="/MusicList">Back to Music List</a>
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Add" enctype="multipart/form-data">
+
+            <input hidden asp-for="musicid" value="" class="form-control" />
+            <div class="form-group">
+                <label asp-for="image" class="control-label">Image</label>
+
+                <div class="custom-file">
+                    <input type="file" asp-for="image" class="custom-file-input form-control" name="Image" id="image" accept="image/*" title="Image">
+                    <label id="imglabel" class="custom-file-label" for="customFile">Choose Image file</label>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="audio" class="control-label">Audio</label>
+
+                <div class="custom-file">
+                    <input type="file" asp-for="audio" class="custom-file-input form-control" name="Song" id="song" accept="audio/*" title="Audio">
+                    <label id="audiolabel" class="custom-file-label" for="customFile">Choose Audio file</label>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="title" class="control-label">Title</label>
+                <input asp-for="title" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="artist" class="control-label">Artist</label>
+                <input asp-for="artist" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="genre" class="control-label">Genre</label>
+                <input asp-for="genre" class="form-control" />
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="description" class="control-label">Description</label>
+                <input asp-for="description" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script>
+    $('input#image').change(function (e) {
+        var fileName = e.target.files[0].name;
+        $('#imglabel').html(fileName);
+    });
+
+    $('input#song').change(function (e) {
+        var fileName = e.target.files[0].name;
+        $('#audiolabel').html(fileName);
+    });
+</script>

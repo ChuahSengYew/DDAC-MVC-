@@ -33,6 +33,16 @@ namespace DDAC_MVC_.Controllers
             return RedirectToAction("Index", "MusicList");
         }
 
+        public IActionResult AccessLog()
+        {
+            return RedirectToAction("Index", "AccessLog");
+        }
+
+        public IActionResult Logout()
+        {
+            return RedirectToAction("Index", "Logout");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
