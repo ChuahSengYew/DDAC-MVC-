@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDAC(MVC)", "DDAC(MVC)\DDAC(MVC).csproj", "{A365FDB6-F41F-4BAB-A5A2-2CD8AB872EDF}"
+<<<<<<< HEAD
+=======
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DDACAPI", "DDACAPI\DDACAPI.csproj", "{2EBB1D67-45F0-4BCA-8720-53312BA65DFD}"
+>>>>>>> 5b5060f15e0d67dcf443be6421a5a5a53acd5eef
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,12 @@ Global
 		{A365FDB6-F41F-4BAB-A5A2-2CD8AB872EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A365FDB6-F41F-4BAB-A5A2-2CD8AB872EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A365FDB6-F41F-4BAB-A5A2-2CD8AB872EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
+=======
+		{2EBB1D67-45F0-4BCA-8720-53312BA65DFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EBB1D67-45F0-4BCA-8720-53312BA65DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EBB1D67-45F0-4BCA-8720-53312BA65DFD}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> 5b5060f15e0d67dcf443be6421a5a5a53acd5eef
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

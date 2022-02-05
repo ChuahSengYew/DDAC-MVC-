@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Signup Page";
+}
+
+
+<link rel="stylesheet" href="~/css/site.css" />
+<form id="myForm" class="form-container" action="/login">
+    <h3>Sign Up</h3>
+    <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" name="FullName" class="form-control" id="FullName" aria-describedby="fullNameHelp" placeholder="Enter your full name">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="Email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter your email address">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="Username" class="form-control" id="Username" aria-describedby="usernameHelp" placeholder="Enter your desired username">
+    </div>
+    <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" name="Password" class="form-control" id="Password" placeholder="Password">
+    </div>
+    <button id="buttonSubmit" type="submit" class="btn btn-primary btn-block">Sign Up</button>
+</form>
+
+<script type="text/javascript" src="~/js/site.js"></script>
+<script>
+    const myForm = document.getElementById('myForm');
+
+    myForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let userApi = api + '/user';
+        const formData = new FormData(this);
+        var object = {};
+        formData.forEach(function (value, key) {
+            object[key] = value;
+        });
+        object["Type"] = 0;
+        var jsonBod = JSON.stringify(object);
+        console.log(jsonBod);
+        fetch(userApi, {
+            method: 'post',
+            body: jsonBod,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }).then(function (response) {
+            window.location.replace("/login");
+            return response.text();
+        }).then(function (text) {
+            console.log(text);
+        }).catch(function (error) {
+            console.log(error);
+        })
+    });
+</script>
