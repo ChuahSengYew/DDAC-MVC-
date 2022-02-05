@@ -6,13 +6,13 @@
     <title>@ViewData["Title"] | MusicNow </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-
+   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-music-note-beamed"></i> MusicNow</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -20,12 +20,15 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav ml-auto nav-content">
+                    <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="SignUp" asp-action="SignUp">Sign up</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="LogIn" asp-action="LogIn">Log in</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="MusicList">Music List</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Accesslog">Access Log</a>
@@ -39,70 +42,19 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main">
+        <main role="main" width="90%">
             @RenderBody()
         </main>
     </div>
+
+    <footer class="border-top footer text-muted bg-dark">
+        <div class="container">
+            &copy; 2022 - MusicNow
+        </div>
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
-
-    <script>
-        async function getUser() {
-            let id = 1;
-            let userApi = api + '/user/' + id;
-            try {
-                let response = await fetch(userApi, { cache: "force-cache" });
-                return await response.json();
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        async function renderUser() {
-            let user = await getUser();
-            let container = document.querySelector('.nav-content');
-            if (user.type == 0) {
-                container.innerHTML = `
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="privacy">Privacy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="profile">${user.fullName}</a>
-                            </li>
-                            `;
-            }
-            else if (user.type == 1) {
-                container.innerHTML = `
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="privacy">Privacy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="profile">${user.fullName}</a>
-                            </li>
-                            `;
-            }
-            else if (user.type == 2) {
-                container.innerHTML = `
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="privacy">Privacy</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="profile">${user.fullName}</a>
-                            </li>
-                            `;
-            }
-        }
-        renderUser();
-    </script>
 </body>
 </html>
